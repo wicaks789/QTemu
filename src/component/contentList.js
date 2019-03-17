@@ -1,26 +1,23 @@
 import React, { Component } from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import UpcomingMeetup from './upcomingMeetup';
+import AboutMeetup from './aboutMeetup';
+import Members from './members';
+import PastMeetup from './pastMeetup';
+import Footer from './footer';
 
 class ContentList extends Component {
     render() {
-        const {title,link} = this.props;
         return (
             <Container style={{ margin: 0, padding: 0, maxWidth: '100%' }}>
-                <Row>
-                    <Col style={{ textAlign: "left" }}><h5>{title}</h5></Col>
-                    <Col style={{ textAlign: "right",marginRight:'30px' }}><h6><a href="{link}">See All</a></h6></Col>
-                </Row>
-                <Row>
-                    <Col>
-                        <UpcomingMeetup/>
-                    </Col>
-                    
-                </Row>
+                <UpcomingMeetup title="Next Meetup" />
+                <AboutMeetup title="About Meetup"/>  
+                <Members title="Members" link="#"/>   
+                <PastMeetup title="Past Meetup" link="#"/>   
+                <Footer/>   
             </Container>
         )
     }
-
 }
 
 export default ContentList;

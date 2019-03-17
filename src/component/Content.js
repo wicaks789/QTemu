@@ -8,12 +8,12 @@ class Content extends Component {
             <React.Fragment>
                 <div className="content">
                     <Banner />
-                    <ContentList />
-                </div>
+                    <ContentList/>                  
+                    
+                    </div>
             </React.Fragment>
         )
     }
-
 }
 
 export default Content;
