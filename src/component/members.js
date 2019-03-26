@@ -27,7 +27,8 @@ export default class UpcomingMeetup extends Component {
                                         </div>
                                         <div style={{ display: "table cell", verticalAlign: "middle" }}>
                                             <h6>Organizer</h6>
-                                            <p>Adhy Wiranata &nbsp;&nbsp;&nbsp;   <a href="https://facebook.com"><b>4 Others</b></a></p>
+                                            <p>{this.props.members ? this.props.members[0].name : ""} &nbsp;&nbsp;&nbsp;   <a href="https://facebook.com"><b>4 Others</b></a></p>
+                                          
                                         </div>
                                     </Col>
                                 </Row>

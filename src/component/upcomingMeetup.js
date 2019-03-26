@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import { Jumbotron, Container, Row, Col } from 'react-bootstrap';
 
 export default class UpcomingMeetup extends Component {
+ 
     render() {
+        
         const { title, link } = this.props;
         let showLink;
 
@@ -31,9 +33,21 @@ export default class UpcomingMeetup extends Component {
 
                                         Remember to bring a photo ID to get through building security .<br /><br />
                                         ---------<br /><br />
-                                        See you there!
-                                        Best, Hengki , Giovanni , Sofian, Riza, Agung The Jakarta JS Organizers
-                                    </p>
+                                        See you there!                                        
+                                       </p>                                   
+                                     <p>
+                                                                                        
+                                            { this.props.members ?                                           
+                                                this.props.members.map(function(data,idx,arr){
+                                                return (
+                                                <span key={idx}> {data.name + (arr.length == idx+1? "" : ",")}  </span>
+                                                )
+                                            } )
+                                        : ""} 
+                                            </p>                                                                     
+                                       <p>
+                                         The Jakarta JS Organizers
+                                    </p>    
                                 </Col>
                             </Row>                            
                         </Container>

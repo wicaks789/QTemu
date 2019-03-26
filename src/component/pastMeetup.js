@@ -24,7 +24,6 @@ export default class UpcomingMeetup extends Component {
     }
 
     render() {
-
         const { title, link } = this.props;
         let showLink;
 

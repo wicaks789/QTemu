@@ -4,7 +4,7 @@ import NavBar from './component/Navbar';
 import Content from './component/Content';
 
 class App extends Component {
-  render() {    
+  render() {       
     return (
       <div className="App">
         <NavBar /> 

@@ -11,8 +11,6 @@ class Footer extends Component {
             </Col>
         </Row>
     
-               
-    
         )
 
     }

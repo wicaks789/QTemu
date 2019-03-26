@@ -8,11 +8,12 @@ import Footer from './footer';
 
 class ContentList extends Component {
     render() {
+        
         return (
             <Container style={{ margin: 0, padding: 0, maxWidth: '100%' }}>
-                <UpcomingMeetup title="Next Meetup" />
+                <UpcomingMeetup members={this.props.members} title="Next Meetup" />
                 <AboutMeetup title="About Meetup"/>  
-                <Members title="Members" link="#"/>   
+                <Members  members={this.props.members} title="Members" link="#"/>   
                 <PastMeetup title="Past Meetup" link="#"/>   
                 <Footer/>   
             </Container>
