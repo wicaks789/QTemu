@@ -10,7 +10,7 @@ class Content extends Component {
             members:null                     
         }      
     }          
-    componentDidMount(){
+    componentWillMount(){
         axios.get('https://swapi.co/api/people/')
             .then(response=> {
                 this.setState({
@@ -18,7 +18,6 @@ class Content extends Component {
                 });              
         })
     }
-
 
     render() {
         return (

@@ -6,7 +6,7 @@ import BannerImage from '../img/training.jpg'
 export default class Banner extends Component {       
     render() {   
         return (           
-            <Jumbotron fluid style={{padding:'10px'}}>
+            <Jumbotron fluid style={{padding:'10px',marginBottom:'10px'}}>
                 <Container style={{margin:'10px'}}>
                     <Row>
                         <Col sm={4}>
