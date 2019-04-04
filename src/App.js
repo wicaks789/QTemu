@@ -4,12 +4,15 @@ import NavBar from './component/Navbar';
 import Content from './component/Content';
 import {BrowserRouter,Router, Route, Switch} from 'react-router-dom';
 import MeetupForm from './component/meetupForm';
+import {Provider}from 'react-redux';
+import store from './store';
 
 class App extends Component {
-  render() {       
+  render() {    
    
     return (
-      <BrowserRouter>
+      <Provider store={store}>
+         <BrowserRouter>
       <div className="App">     
         <NavBar />                
           <Switch>
@@ -20,6 +23,8 @@ class App extends Component {
                
       </div>
       </BrowserRouter>
+      </Provider>
+     
     );
   }
 }

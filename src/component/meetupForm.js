@@ -1,41 +1,28 @@
 import React , {Component} from 'react';
-import {Form} from 'react-bootstrap';
+import {connect} from 'react-redux';
+import MyButton from './reuse/myButton';
+import { increment,decrement,reset } from '../action'
 
 class MeetupForm extends Component {
-  
-    render(){
-        console.log(this.props);
-        return(
-            <div>
-               {this.props.match.params.name}
-                 <Form>
-            <Form.Group controlId="formBasicEmail">
-              <Form.Label>Email address</Form.Label>
-              <Form.Control type="email" placeholder="Enter email" />
-              <Form.Text className="text-muted">
-                We'll never share your email with anyone else.
-              </Form.Text>
-            </Form.Group>
-          
-            <Form.Group controlId="formBasicPassword">
-              <Form.Label>Password</Form.Label>
-              <Form.Control type="password" placeholder="Password" />
-            </Form.Group>
-            <Form.Group controlId="formBasicChecbox">
-              <Form.Check type="checkbox" label="Check me out" />
-            </Form.Group>
-            {/* <Button variant="primary" type="submit">
-              Submit
-            </Button> */}
-          </Form>
-
-            </div>
-           
-
+    render(){        
+        return(     
+              <div>
+                  <p>{this.props.match.params.name}</p> 
+                  <p>{this.props.result.angka}</p>           
+              <MyButton variant="success" text="Increment" handleClick={()=>this.props.increment()}/>
+              <MyButton variant="warning" text="Decrement" handleClick={()=>this.props.decrement(1)}/>
+              <MyButton variant="danger" text="Reset" handleClick={()=>this.props.reset()}/>
+            </div>            
         )
     }
-
-
 }
 
-export default MeetupForm;
+const mapStateToProps =(state)=>{
+  return {
+    result:state
+  }
+}
+
+const mapDispatchToProps = {increment,decrement,reset}
+
+export default connect(mapStateToProps,mapDispatchToProps)(MeetupForm);  
