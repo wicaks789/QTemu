@@ -11,8 +11,9 @@ class NavBar extends Component {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
-                        <Link to="/meetup/" className="nav-link">Create Meetup</Link>                        
-                        <Nav.Link href="#link">Explore</Nav.Link>                        
+                        <Link to="/meetup/" className="nav-link">Create Meetup</Link>
+                        <Link to="/meetup/location/" className="nav-link">Past Meetup</Link>                         
+                                             
                     </Nav> 
                     <MyButton variant="warning" text="Login"></MyButton>                                     
                    

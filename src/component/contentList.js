@@ -7,18 +7,17 @@ import PastMeetup from './pastMeetup';
 import Footer from './footer';
 
 class ContentList extends Component {
-    render() {
-        
+    render() {       
         return (
             <Container style={{ margin: 0, padding: 0, maxWidth: '100%' }}>
                 <UpcomingMeetup members={this.props.members} title="Next Meetup" />
-                <AboutMeetup title="About Meetup"/>  
-                <Members  members={this.props.members} title="Members" link="#"/>   
+                <AboutMeetup title="About Meetup"/>                
+                <Members members={ this.props.members.length > 0 ? this.props.members[0].name : "" }  title="Members" link="#"/>   
                 <PastMeetup title="Past Meetup" link="#"/>   
                 <Footer/>   
             </Container>
         )
     }
 }
-
+ 
 export default ContentList;

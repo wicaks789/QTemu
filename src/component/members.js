@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { Jumbotron, Container, Row, Col, Image } from 'react-bootstrap';
 
-export default class UpcomingMeetup extends Component {
-    render() {
+class UpcomingMeetup extends Component {  
+   
+    render() {       
         const { title, link } = this.props;
         let showLink;
 
@@ -27,7 +28,7 @@ export default class UpcomingMeetup extends Component {
                                         </div>
                                         <div style={{ display: "table cell", verticalAlign: "middle" }}>
                                             <h6>Organizer</h6>
-                                            <p>{this.props.members ? this.props.members[0].name : ""} &nbsp;&nbsp;&nbsp;   <a href="https://facebook.com"><b>4 Others</b></a></p>
+                                            <p>{this.props.members} &nbsp;&nbsp;&nbsp;   <a href="https://facebook.com"><b>4 Others</b></a></p>
                                           
                                         </div>
                                     </Col>
@@ -38,7 +39,8 @@ export default class UpcomingMeetup extends Component {
                 </Row>
             </React.Fragment>
 
-
         )
     }
 }
+
+export default UpcomingMeetup;

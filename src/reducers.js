@@ -20,8 +20,19 @@ const myReducer = (state = {...myStore}, action) => {
         case('RESET'):
            return({
             ...state,
-            angka:0
-           }) 
+            angka:0,
+            people:[]
+           })
+        case('FETCHUSER'):
+        return({
+           ...state,
+           people:action.payload
+        })
+        case('ADDUSER'):
+        return({
+           ...state,
+           people:action.payload
+        })
         default:
             return state
     }
